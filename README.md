@@ -1,16 +1,23 @@
-# chatgpt
+# Useage
 
-A new Flutter project.
+1. API key 발급
+- OpenApi 사이트에서 API key 발급
+https://platform.openai.com/account/api-keys
 
-## Getting Started
+2. pubspec.yaml에 dependencise 추가
+```
+dependencies:
+...
+  http: ^0.13.4
+...
+```
 
-This project is a starting point for a Flutter application.
+2. API key 입력
+```
+const apiKey = '본인이 발급 받은 API key';
+```
 
-A few resources to get you started if this is your first Flutter project:
+- main.dart 파일의 해당 부분에 본인이 발급받은 API key 입력
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Preview
+![image](https://user-images.githubusercontent.com/46911878/233628074-f7e5f05a-5cff-43ec-9898-18e780252df5.png)
