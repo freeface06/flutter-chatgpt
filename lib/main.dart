@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-const apiKey = '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';
+const apiKey = '본인이 발급 받은 API key';
 const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
 List<Chat> messages = []; // 채팅 내용을 저장할 List
