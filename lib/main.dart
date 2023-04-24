@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-const apiKey = '본인이 발급 받은 API key';
-const apiUrl = 'https://api.openai.com/v1/completions';
+const apiKey = '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';
+const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
 List<Chat> messages = []; // 채팅 내용을 저장할 List
 
@@ -22,20 +22,17 @@ Future<String> generateText(String prompt) async {
       'Authorization': 'Bearer $apiKey'
     },
     body: jsonEncode({
-      "model": "text-davinci-003",
-      'prompt': prompt,
-      'max_tokens': 1000,
-      'temperature': 0,
-      'top_p': 1,
-      'frequency_penalty': 0,
-      'presence_penalty': 0
+      "model": "gpt-3.5-turbo",
+      "messages": [
+        {"role": "user", "content": prompt}
+      ]
     }),
   );
 
   Map<String, dynamic> newresponse =
       jsonDecode(utf8.decode(response.bodyBytes));
 
-  return newresponse['choices'][0]['text'];
+  return newresponse['choices'][0]['message']['content'];
 }
 
 class MyApp extends StatelessWidget {
